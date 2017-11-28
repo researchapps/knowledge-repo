@@ -1,0 +1,147 @@
+---
+layout: default
+title: HelpMe Knowledge Base
+permalink: /
+---
+        <button id="menuToggler" class="btn btn-raised btn-info"><i class="fa fa-bars"></i></button>
+
+
+        <!-- TITLE -->
+        <section id="section_00" class="section wb">
+            <div class="container-fluid">
+                <div class="page-title text-center">
+                    <h1>The Human Pages</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="{{ site.baseurl }}/#changelog">Changelog</a></li>
+                        <li class="active">Version 1.0</li>
+                        <li class="active">Last Update: {{ site.updated_at }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH -->
+        <section id="section_01" class="section wb" style="height:600px">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-dismissible alert-info">
+                            <button type="button" class="close" style="margin-right:30px" data-dismiss="alert">×</button>
+                            <h4>Welcome!</h4>
+                            <p>This is a collaborate knowledge base for high performance computing and programming, generated from
+                            <a href="https://www.github.com/researchapps/knowledge-repo" class="alert-link">it's respective repository, here</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <form class="site-search">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label" for="focusedInput2">What do you want to learn?</label>
+                            <input class="form-control" id="focusedInput2" type="text">
+                        </div>
+                        <div class="submit-button pull-right">
+                            <a class="btn btn-raised btn-info gr" href="#"><i class="material-icons">search</i> Search</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="section_02" class="section wb">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h3>About <small><a href="{{ site.baseurl }}/#section_00">#back to top</a></small></h3>
+                            <hr>
+                        </div><!-- end title -->
+                    </div>
+                </div><!-- end row -->
+
+                <hr class="invis">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>The Human Pages is a collaborative effort to support researchers and general users of high performancing computing.</p><br>
+ 
+                         <h2>Why do we need this?</h2>
+                         <p>For many institutions that offer a cluster resource, getting help is sometimes challenging. It might be the case that help comes by way of a user list, a forum, or an enterprise Help Desk software that the institution has invested in. Getting help usually comes down to copy pasting some terminal output into an email, and then having a back and forth conversation with an administrator to diagnose the issue. What are some problems here?</p>
+
+                          <ul>
+                             <li>The user must leave his or her working environment to submit the request. Additional steps might be to open a browser, find an email, and then go back to the terminal to determine important content to send to help debug.</li>
+                             <li>The administrator very rarely has enough information on the first request to diagnose the issue. The administrator knows little about the environment, software and libraries on the user's path, or even the simple steps the user took to generate the error.</li>
+                             <li>Requests tend to be redundant. In the best case, an administrator is likely to have a template response for a user logging in the first time, </li>
+                             <li>Every institution is different, and so it's unlikely that documentation or general resources are shared. Each institution operates somewhat in a silo</li>
+                             <li>Even with substantial documentation bases, if the bases don't interact with the user from the environment where they are needed, they may not be manually searched and looked at</li>
+                          </ul><br>
+
+                          <h2>How can we do better?</h2>
+                          <p>It should be the case that each error and ticket helps to grow a knowledge base about high performance computing and programming. When a user asks how to submit a slurm job the first time, the administrator should generate a piece of knowledge about it. When another user asks a second time, he or she should be able to discover the knowledge. Ideally, with simple methods like tags, search, and basic natural language processing, the workload of the administrator is lifted because he doesn't need to write a slight variation of the same help ticket response many times.</p>
+<br>
+                          <h2>What is the content here?</h2>
+                          <p> The static content served from this site is programatically generated from the <a href="">HelpMe</a> collaborative infrastructure, which receives questions from users directly from the command line, organized them for administrators to find and answer, and then a topic or question that represents one or more questions is saved with version control here, and automatically rendered on this site.</p><br>
+
+                          <h2>How does it work?</h2>
+
+                          <h3>Asking for Help</h3>
+                          <ol>
+                            <li>We start with a user on a command line. He or she issues a command, and perhaps hits an error message.</li>
+                            <li>The user types <strong>helpme</strong> and writes a brief message about the issue at hand. The user is asked if he/she can reproduce the error, and if so, to do it</li>
+                            <li>The error is caotured in its entirety in a video, environment variables and other metadata about the session are also captured</li>
+                            <li>The metadata, video capture, and user question are then submit to the helpme portal, and the user receives back immeditely a url to the ticket.</li>
+                          </ol><br>
+
+                         <div class="alert alert-info">
+                            <p>The user is authenticated with a secret in his or her home directory that is shared by the server. Upon receiving the help request, the server validates the request using the key. The environment variables and other sensitive metadata are not exposed publicly in any kind of user interface.</p>
+                         </div><br>
+                           
+                          <h3>Receiving Help Request</h3>
+                          <p>The helpme portal grants accounts to users and adminstrators, and notably, the administrators cross institutional boundaries. A new request shows up as a "post" in a queue, with tags derived automatically from the metadata and video capture. Both administrators and other users can respond with answers and suggestions in a forum style. When an administrator determines a common topic or question is being asked, a topic can be created to add the post to, and a more thorough response written. For this step, and to be deemed an administrator, this means being added as a contributor to this knowledge repo, and what this repository holds are the topics.</p>
+
+                          <h3>Collaborative Development</h3>
+                         <p>You can think of a topic as a wiki page, and each topic is a general idea or question with likely many associated posts from users. Each topic is generated in the helpme interface, and updated here. Each change goes to the knowledge repository as a pull request, where it is discussed by the other administrators. When the pull request is approved and merged, the static site is updated here, as is the helpme interface with a webhook.</p><br>
+
+                          <h3>Extending Knowledge</h3>
+                          <p>This simple setup has many advantages.</p>
+                          <ul>
+                            <li>The Knowledge Repo is a repository of static text files that can be extended to other applications.</li>
+                            <li>The helpme command line tool, if used in a Singularity container, can be used on even the oldest architectures.</li>
+                            <li>Institutions can work together!</li>
+                            <li>Administrators commonly have preferences for interacting with users. With helpme, an administrator can remain completely in the web interface, interact only with Github, or with Github primarily through emali.</li>
+
+ 
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end section -->
+
+        <section id="section_09" class="section wb">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h3>Changelog <small><a href="{{ site.baseurl }}/#section_00">#back to top</a></small></h3>
+                            <hr>
+                        </div><!-- end title -->
+                    </div>
+                </div><!-- end row -->
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <p>You can find the version history (changelog.yml) in the repository <a href="https://github.com/researchapps/knowledge-repo/blob/master/_data/changelog.yml" target="_blank">"yaml" file</a> and we add it here for your viewing pleasure.</p>
+
+                        <hr>
+                        <h4 id="changelog">Changelog</h4>
+
+                        {% include changelog.html %}
+
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div><!-- end container -->
+        </section><!-- end section -->
