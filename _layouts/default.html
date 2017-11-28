@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html class="no-js " lang="en">
+{% include head.html %}
+<body class="doc_wrapper">
+
+    <div id="preloader" style="display: none;">
+        <img class="preloader" src="{{ site.baseurl }}/{{ "assets/img/loader.gif" }}" alt="" style="display: none;">
+    </div>
+ 
+    <div id="wrapper">
+
+        {% include sidebar.html %}
+
+        {{ content }}
+
+        {% include footer.html %}
+        {% include chat.html %}
+ 
+    </div>
+
+    {% include javascript.html %}
+    {{ scripts }}
+</body></html>

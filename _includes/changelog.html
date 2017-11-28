@@ -1,0 +1,26 @@
+<!-- This is rendered from _data/changelog.yml -->
+
+<div class="syntaxhighlighter" id="highlighter_653798">
+    <div class="bar">
+        <div class="toolbar">
+            <a class="item viewSource" href="{{ site.baseurl }}#viewSource" style="width: 16px; height: 16px;" title="view source">view source</a>
+            <div class="item copyToClipboard">
+                <embed height="16" id="highlighter_653798_clipboard" src="assets/code/js/clipboard.swf" title="copy to clipboard" type="application/x-shockwave-flash" width="16">
+            </div><a class="item printSource" href="{{%20site.baseurl%20}}#printSource" style="width: 16px; height: 16px;" title="print">print</a><a class="item about" href="{{ site.baseurl }}#about" style="width: 16px; height: 16px;" title="?">?</a>
+        </div>
+    </div>
+    <div class="lines">
+        {% for entry in site.data.changelog %}
+        <div class="line alt{% cycle "1", "2" %}">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="number"><code>{{ forloop.index }}</code></td>
+                        <td class="content"><code class="plain">{{ entry.date }}: {{ entry.detail }} by {{ entry.author }}</code></td>
+                    </tr>
+                </tbody>
+             </table>
+        </div>
+        {% endfor %}
+    </div>
+ </div>

@@ -1,0 +1,106 @@
+site_title: The HelpMe Knowledge Repo     
+updated_at: "November 28, 2017"
+logo: "/images/logo/logo.png"
+description: "The HelpMe Knowledge Repository is a collaboratively maintained knowledge base for high performance computing and programming support."
+# the description is used in the feed.xml file
+
+baseurl: "/knowledge-repo" #important: start with /
+
+# Site Config
+host: 127.0.0.1  # the preview server used. Leave as is.
+port: 4005  # the port where the preview is rendered. 
+output: web                 # this property is useful for conditional filtering of content that is separate from the PDF.
+url: "http://researchapps.github.io/knowledge-repo"  # needed for sitemap.xml file only
+
+
+# Social Media, etc
+github_editme_path: researchapps/researchapps.github.io/blob/master/pages  # leave blank to disclude
+twitter_username:     researchapps
+github_username:      researchapps
+repo: "https://github.com/researchapps/knowledge-repo" # The main repo, should not end with slash
+
+# Exclude
+# these are the files and directories that jekyll will exclude from the build
+exclude:
+  - .idea/
+  - .gitignore
+  - README.md
+  - vendor/
+  - OLD/
+
+# Optional Feedback Link in Header (disabled)
+feedback_subject_line: Feedback
+feedback_email: vsochat@stanford.edu
+feedback_disable: true
+feedback_text: "Need help?"
+feedback_link: "http://www.github.com/researchapps/knowledge-base/issues"
+
+# Formatting
+highlighter: rouge
+# library used for syntax highlighting
+
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+
+# Collections
+collections:
+  tooltips:
+    output: false
+  work:
+    output: true
+    permalink: /work/:slug/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: main_sidebar
+  -
+    scope:
+      path: ""
+      type: "tooltips"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      tooltip: true
+
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      search: true
+      sidebar: main_sidebar
+
+
+# these are defaults used for the frontmatter for these file types
+
+sidebars:
+- main_sidebar
+
+# asciinema defaults
+asciicast:
+    cols: "115"
+    rows: "25"
+    speed: "2.0"
+    theme: "asciinema"
+
+# asciinema
+# tango
+# solarized-dark
+# solarized-light
+# monokai

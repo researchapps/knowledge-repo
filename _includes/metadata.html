@@ -1,0 +1,12 @@
+<meta name="description" content="{{ content | strip_html | strip_newlines }}">
+{% if page.category %}
+<meta name="keywords" content="{{ page.category }}">
+{% endif %}
+{% if page.title %}
+<meta name="name" content="{{ page.title }}">
+{% endif %}
+<meta name="thumbnail" content="{{ site.baseurl}}/assets/img/logo/logo.svg">
+{% if page.author %}
+<meta name="author" content="{{ page.author }}">
+{% endif %}
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "feed.xml" | prepend: site.url }}">

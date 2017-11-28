@@ -1,4 +1,4 @@
-# HelpMe Knowledge Base
+# HelpMe Knowledge Repo
 
 This is a knowledge base for high performance computing and programming that is updated with contributions from [HelpMe]() and via pull requests to this repository (under development).
 
