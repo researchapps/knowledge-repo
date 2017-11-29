@@ -5,6 +5,7 @@ description: "The HelpMe Knowledge Repository is a collaboratively maintained kn
 # the description is used in the feed.xml file
 
 baseurl: "/knowledge-repo" #important: start with /
+permalink: /:categories/:title/
 
 # Site Config
 host: 127.0.0.1  # the preview server used. Leave as is.
@@ -49,48 +50,43 @@ kramdown:
 
 # Collections
 collections:
-  tooltips:
-    output: false
-  work:
+  kb:
     output: true
-    permalink: /work/:slug/
+    permalink: /:collection/:path/:slug/
+    values:
+      layout: "page"
+  api:
+    output: true
+    permalink: /:collection/:path/:slug/
+    values:
+      layout: "api"
 
 # Defaults
 defaults:
+  - scope:
+      path: "_kb"
+      type: kb
+    values:
+      layout: page
   -
     scope:
-      path: ""
+      path: "pages"
       type: "pages"
     values:
       layout: "page"
       comments: true
       search: true
-      sidebar: main_sidebar
   -
     scope:
-      path: ""
-      type: "tooltips"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-      tooltip: true
-
-  -
-    scope:
-      path: ""
+      path: "_posts"
       type: "posts"
     values:
       layout: "post"
       comments: true
       search: true
-      sidebar: main_sidebar
 
 
 # these are defaults used for the frontmatter for these file types
-
-sidebars:
-- main_sidebar
 
 # asciinema defaults
 asciicast:

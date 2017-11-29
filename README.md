@@ -11,3 +11,10 @@ jekyll serve
 ```
 
 and the development server will work.
+
+Note that you should not edit the content under [_api](_api), this folder should be a symbolic link to [_kb](kb). If you ever need to regenerate:
+
+
+```
+ln -s _kb _api
+```
